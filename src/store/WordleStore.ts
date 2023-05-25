@@ -2,7 +2,7 @@ import words from "../data/words.json";
 
 export default {
     word: "",
-    guesses: new Array(6),
+    guesses: [] as string[],
     currentGuess: 0,
     get won() {
         return this.guesses[this.currentGuess - 1] === this.word;
@@ -39,7 +39,7 @@ export default {
             e.key.match(/[A-z]/)
         ) {
             this.guesses[this.currentGuess] =
-                this.guesses[this.currentGuess] + e.key.toLowerCase();
+                this.guesses[this.currentGuess] + e.key.toUpperCase();
         }
     },
 };
