@@ -26,18 +26,23 @@ const App = observer(() => {
                 To be impressive, your mode result should be 3 guess attempts
             </h3>
             <div className="my-4">
-                {new Array(6).fill(0).map((_, i) => (
+                {store.guesses.map((_, i) => (
                     <Guess
                         key={i}
                         word={store.word}
                         guess={store.guesses[i]}
-                        isGuessed={true}
+                        isGuessed={i < store.currentGuess}
                     />
                 ))}
             </div>
-            word: {store.word}
-            guesses: {JSON.stringify(store.guesses)}
-            <Keyboard />
+            {(store.won || store.lost) && (
+                <button onClick={store.init}>Play Again</button>
+            )}
+            <div className="flex flex-col items-center">
+                word: {store.word}
+                guesses: {JSON.stringify(store.guesses)}
+                <Keyboard store={store} />
+            </div>
         </div>
     );
 });
