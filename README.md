@@ -5,7 +5,7 @@
 ### front end
 
 -   [ ] Update guessed dupe letter color logic in Guess component
--   [ ] Add button to start next level
+-   [ ] Add animation on failed guess
 
 ### back end
 
