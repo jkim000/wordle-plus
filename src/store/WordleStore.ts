@@ -10,6 +10,22 @@ export default {
     get lost() {
         return this.currentGuess === 6;
     },
+    get allGuesses() {
+        return this.guesses.slice(0, this.currentGuess).join("").split("");
+    },
+    get exactGuesses() {
+        return this.word.split("").filter((letter, i) =>
+            this.guesses
+                .slice(0, this.currentGuess)
+                .map((word) => word[i])
+                .includes(letter)
+        );
+    },
+    get inexactGuesses() {
+        return this.word
+            .split("")
+            .filter((letter) => this.allGuesses.includes(letter));
+    },
     init() {
         this.word = words[Math.round(Math.random() * words.length)];
         this.guesses = new Array(6).fill("");
