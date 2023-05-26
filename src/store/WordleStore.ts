@@ -27,7 +27,7 @@ export default {
             .filter((letter) => this.allGuesses.includes(letter));
     },
     init() {
-        this.word = words[Math.round(Math.random() * words.length)];
+        this.word = words[Math.trunc(Math.random() * words.length)];
         this.guesses = new Array(6).fill("");
         this.currentGuess = 0;
     },
@@ -41,18 +41,17 @@ export default {
             return;
         }
         if (e.key === "Enter") {
-            return this.submitGuess;
+            return this.submitGuess();
         }
         if (e.key === "Backspace") {
             this.guesses[this.currentGuess] = this.guesses[
                 this.currentGuess
             ].slice(0, this.guesses[this.currentGuess].length - 1);
-
             return;
         }
         if (
             this.guesses[this.currentGuess].length < 6 &&
-            e.key.match(/[A-z]/)
+            e.key.match(/^[A-z]$/)
         ) {
             this.guesses[this.currentGuess] =
                 this.guesses[this.currentGuess] + e.key.toUpperCase();
