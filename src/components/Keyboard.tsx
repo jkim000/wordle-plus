@@ -6,7 +6,7 @@ interface KeyboardProps {
 }
 
 const Keyboard = observer(({ store }: KeyboardProps) => {
-    const keyboardKeys = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
+    const keyboardKeys = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
 
     return (
         <>
