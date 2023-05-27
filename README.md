@@ -4,8 +4,9 @@
 
 ### front end
 
--   [ ] Update guessed dupe letter color logic in Guess component
--   [ ] Add animation on failed guess
+-   [ ] Add animation on unacceptable guess
+-   [ ] Make Keyboard keys clickable
+-   [ ] Add Enter and Delete keys to Keyboard
 
 ### back end
 
