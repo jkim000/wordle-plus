@@ -25,7 +25,7 @@ const App = observer(() => {
             <h3 className="m-2 text-center text-xl">
                 To be impressive, your mode result should be 3 guess attempts
             </h3>
-            <div className="my-4">
+            <div className="mt-4">
                 {store.guesses.map((_, i) => (
                     <Guess
                         key={i}
@@ -35,13 +35,20 @@ const App = observer(() => {
                     />
                 ))}
             </div>
-            {(store.won || store.lost) && (
-                <button onClick={store.init}>Play Again</button>
-            )}
+            <div className="flex justify-center h-12 my-4">
+                {(store.won || store.lost) && (
+                    <button
+                        className="h-12 w-36 rounded-full text-xl bg-green-600"
+                        onClick={store.init}
+                    >
+                        Play Again
+                    </button>
+                )}
+            </div>
             <div className="flex flex-col items-center">
+                <Keyboard store={store} />
                 word: {store.word}
                 guesses: {JSON.stringify(store.guesses)}
-                <Keyboard store={store} />
             </div>
         </div>
     );
