@@ -32,6 +32,8 @@ const App = observer(() => {
                         word={store.word}
                         guess={store.guesses[i]}
                         isGuessed={i < store.currentGuess}
+                        currentRow={i}
+                        store={store}
                     />
                 ))}
             </div>

@@ -4,7 +4,6 @@
 
 ### front end
 
--   [ ] Add animation on unacceptable guess
 -   [ ] Make Keyboard keys clickable
 -   [ ] Add Enter and Delete keys to Keyboard
 

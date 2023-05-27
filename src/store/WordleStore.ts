@@ -4,6 +4,7 @@ export default {
     word: "",
     guesses: [] as string[],
     currentGuess: 0,
+    animateGuess: false,
     get won() {
         return this.guesses[this.currentGuess - 1] === this.word;
     },
@@ -34,7 +35,14 @@ export default {
     submitGuess() {
         if (words.includes(this.guesses[this.currentGuess])) {
             this.currentGuess += 1;
+            return true;
         }
+        const animateGuess = true;
+        setTimeout(() => {
+            this.animateGuess = false;
+        }, 500);
+        this.animateGuess = animateGuess;
+        return false;
     },
     handleKeyup(e: { key: string }) {
         if (this.won || this.lost) {
