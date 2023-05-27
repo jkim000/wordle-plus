@@ -1,5 +1,9 @@
 # Wordle Six
 
+## Objective
+
+Just some coding practice trying out MobX for the first time managing state without hooks and context.
+
 ## TODO
 
 ### front end
@@ -9,5 +13,4 @@
 
 ### back end
 
--   [ ] Add db for store username, current level, guess results, win percentage
--   [ ] If not logged in, just play random level, if logged in, play current level
+-   [ ] Add db to store username, results (1-6 and failed guess attempts), win percentage
